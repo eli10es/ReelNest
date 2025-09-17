@@ -19,4 +19,11 @@
 input,
 textarea {
   width: 90%;
+  border-radius: 1em;
+  border: none;
+  height: 3em;
+}
+textarea {
+  resize: none;
+  height: 15vh;
 }

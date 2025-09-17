@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2em;
+  gap: 2em;
+}
+
+.link-icons {
+  color: white;
+}

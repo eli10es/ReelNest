@@ -1,0 +1,22 @@
+.form-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  font-size: 1.25em;
+  color: white;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+input,
+textarea {
+  width: 90%;
+}

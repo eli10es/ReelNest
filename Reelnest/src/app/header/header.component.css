@@ -1,0 +1,12 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  padding: 2em 1em;
+}
+
+.hamburger {
+  background: transparent;
+  border: none;
+  color: white;
+}

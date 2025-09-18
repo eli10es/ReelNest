@@ -17,7 +17,8 @@
 }
 
 input,
-textarea {
+textarea,
+button {
   width: 90%;
   padding: 0.5em;
   border-radius: 0.5em;
@@ -32,4 +33,21 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
+}
+
+button {
+  width: 50%;
+  background-color: #1193d4;
+  color: white;
+  font-size: 1.25em;
+  transition: background-color 0.1s ease-in, transform 0.1s ease-out;
+}
+
+button:hover {
+  filter: brightness(125%);
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.98);
 }

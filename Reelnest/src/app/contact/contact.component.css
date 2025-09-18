@@ -19,11 +19,17 @@
 input,
 textarea {
   width: 90%;
-  border-radius: 1em;
+  padding: 0.5em;
+  border-radius: 0.5em;
   border: none;
-  height: 3em;
+  height: 2.25em;
 }
 textarea {
   resize: none;
   height: 15vh;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
 }

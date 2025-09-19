@@ -3,10 +3,13 @@
   justify-content: space-between;
   color: white;
   padding: 2em 1em;
+  align-items: center;
 }
 
 .hamburger {
-  background: transparent;
+  background: #15242b;
   border: none;
   color: white;
+  padding: 1em;
+  border-radius: 1em;
 }

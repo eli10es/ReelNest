@@ -51,3 +51,50 @@ button:hover {
 button:active {
   transform: scale(0.98);
 }
+
+@media (min-width: 1025px) {
+  .form-style {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    font-size: 1.25em;
+    color: white;
+  }
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5em;
+  }
+
+  input,
+  textarea,
+  button {
+    width: 70%;
+    padding: 0.5em;
+    border-radius: 0.5em;
+    border: none;
+    height: 2.25em;
+  }
+  textarea {
+    resize: none;
+    height: 15vh;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+  }
+
+  button {
+    width: 50%;
+    background-color: #1193d4;
+    color: white;
+    font-size: 1.25em;
+    transition: background-color 0.1s ease-in, transform 0.1s ease-out;
+  }
+}

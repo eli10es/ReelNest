@@ -4,8 +4,17 @@
     <p>Have a project in mind? Let's talk</p>
   </div>
 
-  <input type="text" placeholder="Your Name" />
-  <input type="text" placeholder="Your Email" />
-  <textarea placeholder="Your Message" name="" id=""></textarea>
-  <button>Send Message</button>
+  <form [formGroup]="myForm">
+    <input type="text" placeholder="Your Name" formControlName="name" />
+    <input type="text" placeholder="Your Email" formControlName="email" />
+    <textarea
+      placeholder="Your Message"
+      name=""
+      id=""
+      formControlName="message"
+    ></textarea>
+    <button [disabled]="myForm.invalid" (click)="onSend($event)">
+      Send Message
+    </button>
+  </form>
 </div>

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  FormGroup,
   FormControl,
-  Validators,
+  FormGroup,
   ReactiveFormsModule,
+  Validators,
 } from '@angular/forms';
 
-import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
@@ -22,28 +22,36 @@ export class ContactComponent implements OnInit {
       email: new FormControl('', [Validators.required, Validators.email]),
       message: new FormControl('', Validators.required),
     });
-
-    // emailjs.init({
-    //   publicKey: 'YOUR_PUBLIC_KEY',
-    //   // Do not allow headless browsers
-    //   blockHeadless: true,
-    //   blockList: {
-    //     // Block the suspended emails
-    //     list: ['foo@emailjs.com', 'bar@emailjs.com'],
-    //     // The variable contains the email address
-    //     watchVariable: 'userEmail',
-    //   },
-    //   limitRate: {
-    //     // Set the limit rate for the application
-    //     id: 'app',
-    //     // Allow 1 request per 10s
-    //     throttle: 10000,
-    //   },
-    // });
   }
 
-  onSend(e: Event) {
-    console.log(this.myForm.value);
-    this.myForm.reset();
+  onSend(event: Event) {
+    event.preventDefault(); // prevent page refresh
+
+    if (this.myForm.invalid) {
+      alert('Please fill all fields correctly.');
+      return;
+    }
+
+    const { name, email, message } = this.myForm.value;
+
+    emailjs.init('bOV0KjXD1_A1tLeQJ');
+
+    emailjs
+      .send('service_hckktvp', 'template_lget1dh', {
+        name: name,
+        email: email,
+        message: message,
+      })
+      .then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          alert('Message sent successfully!');
+          this.myForm.reset();
+        },
+        (error) => {
+          console.error('FAILED...', error);
+          alert('Failed to send message. Please try again later.');
+        }
+      );
   }
 }

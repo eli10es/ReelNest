@@ -7,51 +7,48 @@
     </p>
   </div>
   <div class="brand-list">
-    <div class="slider">
+    <!-- <div class="slider">
       <div class="slide-track">
+        @if (isDesktop) { @for (img of brands; track $index) {
         <div class="slide">
-          <img src="tutti.jpg" height="100" width="250" alt="" />
+          <img src="{{ img }}" height="100" width="250" alt="" />
         </div>
+        } } @else { @for (img of brands; track $index) {
         <div class="slide">
-          <img src="leaderImpact.jpg" height="100" width="250" alt="" />
+          <img src="{{ img }}" height="100" width="250" alt="" />
         </div>
+        } @for (img of brands; track $index) {
         <div class="slide">
-          <img src="baniiFamiliei.jpg" height="100" width="250" alt="" />
+          <img src="{{ img }}" height="100" width="250" alt="" />
         </div>
+        } }
+      </div>
+    </div> -->
+
+    @if (isDesktop) {
+    <div class="brand-desktop">
+      <div class="brand-img">
+        @for (img of brands; track $index) {
         <div class="slide">
-          <img src="depUtilaje.jpg" height="100" width="250" alt="" />
+          <img src="{{ img }}" height="100" width="250" alt="" />
         </div>
-        <div class="slide">
-          <img src="aliniere.jpg" height="100" width="250" alt="" />
-        </div>
-        <div class="slide">
-          <img src="inspirium.jpg" height="100" width="250" alt="" />
-        </div>
-        <div class="slide">
-          <img src="baurent.jpg" height="100" width="250" alt="" />
-        </div>
-        <div class="slide">
-          <img src="tutti.jpg" height="100" width="250" alt="" />
-        </div>
-        <div class="slide">
-          <img src="leaderImpact.jpg" height="100" width="250" alt="" />
-        </div>
-        <div class="slide">
-          <img src="baniiFamiliei.jpg" height="100" width="250" alt="" />
-        </div>
-        <div class="slide">
-          <img src="depUtilaje.jpg" height="100" width="250" alt="" />
-        </div>
-        <div class="slide">
-          <img src="aliniere.jpg" height="100" width="250" alt="" />
-        </div>
-        <div class="slide">
-          <img src="inspirium.jpg" height="100" width="250" alt="" />
-        </div>
-        <div class="slide">
-          <img src="baurent.jpg" height="100" width="250" alt="" />
-        </div>
+        }
       </div>
     </div>
+    } @else {
+    <div class="slider">
+      <div class="slide-track">
+        @for (img of brands; track $index) {
+        <div class="slide">
+          <img src="{{ img }}" height="100" width="250" alt="" />
+        </div>
+        } @for (img of brands; track $index) {
+        <div class="slide">
+          <img src="{{ img }}" height="100" width="250" alt="" />
+        </div>
+        }
+      </div>
+    </div>
+    }
   </div>
 </div>

@@ -7,13 +7,23 @@
 }
 
 .hamburger {
-  background: #15242b;
+  background: white;
   border: none;
-  color: white;
+  color: black;
   padding: 1em;
   border-radius: 1em;
+  transition: background-color 0.1s ease-in, transform 0.1s ease-out;
 }
 
 .hamburger:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+button:hover {
+  filter: brightness(125%);
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.98);
 }

@@ -24,7 +24,7 @@ button {
   border-radius: 0.5em;
   border: none;
   height: 2.25em;
-  background-color: #15242b;
+  background-color: rgba(0, 0, 0, 0.1);
   color: aliceblue;
   box-shadow: rgba(255, 255, 255, 0.5) 0px 0px 0px 1px inset,
     rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
@@ -47,8 +47,9 @@ textarea:focus {
 
 button {
   width: 50%;
-  background-color: #1193d4;
-  color: white;
+  background-color: white;
+  color: black;
+  border-color: black;
   font-size: 1.25em;
   transition: background-color 0.1s ease-in, transform 0.1s ease-out;
 }
@@ -111,8 +112,8 @@ button:active {
 
   button {
     width: 20%;
-    background-color: #1193d4;
-    color: white;
+    background-color: white;
+    color: black;
     font-size: 1.25em;
     transition: background-color 0.1s ease-in, transform 0.1s ease-out;
   }

@@ -136,3 +136,15 @@
     font-size: 1.1em;
   }
 }
+
+.extra-service-item li {
+  font-weight: bold;
+  list-style: none;
+}
+.extra li {
+  font-weight: bold;
+  list-style: none;
+}
+.italic {
+  font-style: italic;
+}

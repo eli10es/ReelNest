@@ -1,10 +1,10 @@
-.video-container {
+/* .video-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  padding-bottom: 56.25%; 
   height: 0;
   overflow: hidden;
   max-width: 100%;
-  /* border: 1em solid red; */
+ 
 }
 
 .video-container iframe {
@@ -13,4 +13,110 @@
   left: 0;
   width: 100%;
   height: 100%;
+} */
+
+/* /////////////////////////GPL/////////////////////*/
+.hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #ffffff;
+  background: #000; /* Fallback */
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none; /* Prevents users from clicking the YT player */
+}
+
+.video-background iframe {
+  width: 100vw;
+  height: 56.25vw; /* Maintains 16:9 across width */
+  min-height: 100vh;
+  min-width: 177.77vh; /* Maintains 16:9 across height */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: -2px;
+}
+
+h1 span {
+  color: #ff3e3e; /* Accent color for a videographer feel */
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.cta-group {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: #ff3e3e; /* Your signature brand red */
+  color: white;
+  border: none;
+  padding: 20px 50px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  box-shadow: 0 10px 30px rgba(255, 62, 62, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-5px);
+  background: white;
+  color: black;
+  box-shadow: 0 15px 40px rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:active {
+  transform: translateY(-2px);
 }

@@ -1,4 +1,4 @@
-<div class="brands">
+<!-- <div class="brands">
   <div class="title">
     <h1>Branduri cu care colaboram</h1>
     <p>
@@ -7,23 +7,7 @@
     </p>
   </div>
   <div class="brand-list">
-    <!-- <div class="slider">
-      <div class="slide-track">
-        @if (isDesktop) { @for (img of brands; track $index) {
-        <div class="slide">
-          <img src="{{ img }}" height="100" width="250" alt="" />
-        </div>
-        } } @else { @for (img of brands; track $index) {
-        <div class="slide">
-          <img src="{{ img }}" height="100" width="250" alt="" />
-        </div>
-        } @for (img of brands; track $index) {
-        <div class="slide">
-          <img src="{{ img }}" height="100" width="250" alt="" />
-        </div>
-        } }
-      </div>
-    </div> -->
+    
 
     @if (isDesktop) {
     <div class="brand-desktop">
@@ -51,4 +35,34 @@
     </div>
     }
   </div>
-</div>
+</div> -->
+
+<section class="brands-section">
+  <div class="container">
+    <div class="header-content">
+      <h2 class="title">Trusted by <span>Industry Leaders</span></h2>
+    </div>
+
+    <div class="brand-wrapper">
+      @if (isDesktop) {
+        <div class="brand-grid">
+          @for (img of brands; track $index) {
+            <div class="brand-item">
+              <img [src]="img" [alt]="'Brand ' + $index" class="brand-logo" />
+            </div>
+          }
+        </div>
+      } @else {
+        <div class="slider">
+          <div class="slide-track">
+            @for (img of brands.concat(brands); track $index) {
+              <div class="slide">
+                <img [src]="img" [alt]="'Brand ' + $index" class="brand-logo" />
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

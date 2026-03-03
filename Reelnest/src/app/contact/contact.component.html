@@ -1,4 +1,4 @@
-<div class="form-style">
+<!-- <div class="form-style">
   <div class="title" id="contact">
     <h1>Get In Touch</h1>
     <p>Have a project in mind? Let's talk</p>
@@ -17,4 +17,59 @@
       Send Message
     </button>
   </form>
-</div>
+</div> -->
+
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="header-content">
+      <span class="subtitle">Inquiry</span>
+      <h2 class="section-title">Let’s Create <span>Something Great</span></h2>
+      <p class="section-desc">
+        Have a project in mind? Fill out the form below or reach out directly.
+      </p>
+    </div>
+
+    <form [formGroup]="myForm" class="contact-form">
+      <div class="input-group">
+        <div class="field-wrapper">
+          <input
+            type="text"
+            placeholder="Your Name"
+            formControlName="name"
+            required
+          />
+          <span class="focus-border"></span>
+        </div>
+
+        <div class="field-wrapper">
+          <input
+            type="email"
+            placeholder="Your Email"
+            formControlName="email"
+            required
+          />
+          <span class="focus-border"></span>
+        </div>
+      </div>
+
+      <div class="field-wrapper full-width">
+        <textarea
+          placeholder="Tell us about your project..."
+          formControlName="message"
+          required
+        ></textarea>
+        <span class="focus-border"></span>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="myForm.invalid"
+        (click)="onSend($event)"
+        class="submit-btn"
+      >
+        <span class="btn-text">Send Message</span>
+        <span class="btn-icon">→</span>
+      </button>
+    </form>
+  </div>
+</section>

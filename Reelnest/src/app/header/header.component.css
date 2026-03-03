@@ -1,4 +1,4 @@
-.header {
+/* .header {
   display: flex;
   justify-content: space-between;
   color: white;
@@ -26,4 +26,92 @@ button:hover {
 
 button:active {
   transform: scale(0.98);
+} */
+
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  z-index: 1000;
+  /* Subtle blur to make text pop over video */
+  backdrop-filter: blur(10px);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.8) 0%,
+    transparent 100%
+  );
+  box-sizing: border-box;
+}
+
+/* Logo Styling */
+.logo {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.logo span {
+  color: #ff3e3e; /* Matching the Hero accent color */
+  font-weight: 300;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+/* High-End Button Styling */
+.contact-btn {
+  background: #ffffff;
+  color: #000000;
+  border: none;
+  padding: 0.8rem 1.8rem;
+  border-radius: 0; /* Sharp edges feel more "Architectural/Pro" */
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-btn .btn-icon {
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effects */
+.contact-btn:hover {
+  background: #ff3e3e;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 62, 62, 0.3);
+}
+
+.contact-btn:hover .btn-icon {
+  transform: translateX(5px);
+}
+
+.contact-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .main-header {
+    padding: 1rem 1.5rem;
+  }
+
+  .btn-text {
+    display: none; /* Icon only on tiny screens or "Contact" */
+  }
 }
